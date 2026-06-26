@@ -1,0 +1,14 @@
+{
+  "name": "ifbara-ai",
+  "version": "1.0.0",
+  "description": "IF-Bara AI Chatbot",
+  "type": "module",
+  "author": "herdiansyah",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
