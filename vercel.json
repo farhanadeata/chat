@@ -1,9 +1,16 @@
 {
-    "cleanUrls": true,
     "rewrites": [
       {
         "source": "/",
         "destination": "/frontend/index.html"
+      },
+      {
+        "source": "/script.js",
+        "destination": "/frontend/script.js"
+      },
+      {
+        "source": "/style.css",
+        "destination": "/frontend/style.css"
       },
       {
         "source": "/api/:path*",
