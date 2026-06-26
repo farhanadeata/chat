@@ -40,7 +40,12 @@ function renderChat() {
         
         const bubble = document.createElement("div");
         bubble.className = `chat-bubble ${msg.sender}`;
-        bubble.textContent = msg.text;
+        if (msg.sender === "bot") {
+            bubble.innerText = formatBotMessage(msg.text);
+            bubble.style.whiteSpace = "pre-line"; // Memastikan line break (\n) berfungsi
+        } else {
+            bubble.textContent = msg.text;
+        }
         
         const time = document.createElement("div");
         time.className = "timestamp";
@@ -181,3 +186,11 @@ if (chats.length === 0) {
 }
 renderChatList();
 renderChat();
+
+function formatBotMessage(text) {
+    // Menghapus '###' dan merapikan spasi
+    let cleanedText = text.replace(/###/g, '\n\n'); 
+    // Menghapus '**' (bold markdown) jika tidak diinginkan
+    cleanedText = cleanedText.replace(/\*\*/g, ''); 
+    return cleanedText;
+}
